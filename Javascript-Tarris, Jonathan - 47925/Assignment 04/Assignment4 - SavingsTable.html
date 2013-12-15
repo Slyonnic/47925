@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Savings Table</title>
+</head>
+
+<body>
+    <h1>Savings Table</h1>
+    <script type="text/javascript">
+        //Declare vars
+        var balance = Number(prompt("Enter your starting balance."));
+        var year = Number(prompt("Enter years you will invest."));
+        var startInterest = Number(prompt("Enter starting interest in %."));
+        var endInterest = Number(prompt("Enter ending interest in %."));
+        
+        document.write("<p>Initial Balance: $"+balance+"</p>"); //Display starting balance	
+        document.write('<table width="1200" border="1">');
+		//Display heading row
+        document.write("<tr><th>Year</th>");
+		for(var i = Math.min(startInterest,endInterest); i < Math.max(startInterest,endInterest)+1; i++){
+			document.write("<th>@"+i+"% Interest</th>");
+		}
+		document.write("</tr>");
+		
+		//Calculate Table
+		var str = "";
+		var tempBalance = balance;
+		for(var i = 0; i < year; i++){
+			str += "<tr><th>"+Number(i+1)+"</th>";			
+			for(var j = Math.min(startInterest,endInterest); j < Math.max(startInterest,endInterest)+1; j++){
+				tempBalance = Math.pow((j / 100) + 1, i+1) * balance;
+				tempBalance = Math.floor(tempBalance * 100) / 100;
+				str += "<td>$"+tempBalance.toFixed(2)+"</td>";
+			}
+			str += "</tr>";
+		}
+		
+		//Display Table
+		str += "</table>";
+		document.write(str);
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Survey</title>
+        <link type="text/css" rel="stylesheet" href="mainStylesheet.css" />
+        <script src="js/libary.js"></script>
+        <script src="js/serveys.js"></script>
+    </head>
+
+    <body>
+    	<div id="mainWrapper" class="wrapper">
+    		<div style="text-align: center">
+	    		<h1>Thank You for Taking the Survey</h1>
+	    		<p>
+	    			<a href="serveyMain.html">Home</a>
+	    		</p>
+    		</div>
+    		<script type="text/javascript">
+    			var sec = 86400; //secounds in a day
+    			var $_GET=getFormInfo(location.href); //store servey info in GET object
+    			for(var name in $_GET){
+					//document.write(name+"="+$_GET[name]+"<br/>");
+				}
+				var str=JSON.stringify($_GET); //put GET object into string
+				var cName = $_GET["servey"] + "-" + $_GET["userName"];
+				/*var cs = new CookieStorage(sec); //new cookie storage object				
+				cs.setItem(cName, str);
+				cs.setItem("cookie1","test1");
+				cs.setItem("cookie2", "test2");
+				var allCook = cs.getItems();
+				for(var name in allCook){
+					document.write(name+"="+allCook[name]+"<br/>");
+				}*/
+				setCookie(cName, str, sec);
+				var allCook = getCookies();
+				for(var name in allCook){
+					//document.write(name+"="+allCook[name]+"<br/>");
+				}
+    		</script>
+		</div>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>2-D Multiplication Table</title>
+        <script type="text/javascript">
+        	function calcTable(){
+        		var tableWidth = Number(prompt("Table Width?"));
+				var tableLength = Number(prompt("Table Height?"));
+				//Create 2-D table array
+				var table = new Array(tableLength);
+				for(var i = 0; i < tableLength; i++){
+					table[i] = new Array(tableWidth);	
+				}
+				
+				//Calc the table
+				for(var i = 0; i < table.length; i++){		
+					for(var j = 0; j < table[i].length; j++){
+						table[i][j] = (i+1)*(j+1);
+					}
+				}
+				return table;
+        	}
+        	
+        	function dispTable(table){
+        		var str = "<tr><th></th>";
+				for(var i = 0; i < table[1].length; i++){
+					str += ("<th>"+(i+1)+"</th>");	
+				}
+				str += "</tr>";
+				for(var i = 0; i < table.length; i++){
+					str += ("<tr><th>"+(i+1)+"</th>");
+					for(var j = 0; j < table[i].length; j++){
+						str += ("<td>"+table[i][j]+"</td>");	
+					}
+					str += "</tr>";
+				}
+				return str;
+        	}
+        </script>
+    </head>
+
+    <body>
+    	<h1>Multiplication Table using 2-D arrays</h1>
+        <p>By: Jonathan Tarris</p>
+    	<table width="200" border="1">
+	    	<script>
+				var multTable = calcTable();
+				var str = dispTable(multTable);
+				document.write(str);
+			</script>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Servey</title>
+        <link type="text/css" rel="stylesheet" href="mainStylesheet.css" />
+        <script src="js/libary.js"></script>
+        <script src="js/serveys.js"></script>
+        <script type="text/javascript">
+        	function deleteAllCookies() {
+			    var cookies = document.cookie.split(";");
+			
+			    for (var i = 0; i < cookies.length; i++) {
+			    	var cookie = cookies[i];
+			    	var eqPos = cookie.indexOf("=");
+			    	var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+			    	document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+			    }
+			}
+        </script>
+    </head>
+
+    <body>
+    	<div id="mainWrapper" class="wrapper">
+    		<div id="header">
+    			<h1>Admin</h1>
+    			<p>
+    				<a href="serveyMain.html">Home</a>
+    			</p>
+    		</div>
+    		<div id="resultsContent">
+				<button type="button" onclick="deleteAllCookies()">Delete Cookies</button>
+	    	</div>
+		</div>
+    </body>
+</html>

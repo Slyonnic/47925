@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Variable Scope Script Chap 3 Page 53</title>
+</head>
+
+<body>
+<h1>Chap 3 Page 53 Snippet</h1>
+<script type="text/javascript">
+	var scope = "global"; //declare a global variable
+	function checkScope(){
+		var scope = "local"; //declare a local variable
+		return scope;        //return variable
+	}
+	
+	document.write("<p>"+checkScope()+"</p>"); //local var is returned because it was called inside its local function
+	document.write("<p>"+scope+"</p>");        //global var is returned because it was called outside the function
+</script>
+</body>
+</html>

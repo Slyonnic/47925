@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Servey</title>
+        <link type="text/css" rel="stylesheet" href="mainStylesheet.css"/>
+        <script src="js/libary.js"></script>
+        <script src="js/serveys.js"></script>
+    </head>
+
+    <body>
+    	<div id="mainWrapper" class="wrapper">
+        	<div id="header">
+            	<h1>Click Servey to Check Results</h1>
+            	<p><a href="serveyMain.html">Home</a></p><br />
+            	<p><a href="#">Admin</a></p>
+            </div>
+            <div id="serveyList">
+            	<table id="serveyListTable">
+                    <tr id="serveyListHeader">
+                    	<td>Servey Name</td>
+                        <td>Creator</td>
+                        <td>Storage</td>
+                    </tr>
+                    <script type="text/javascript">
+                    	var rowCol;
+                    	for(var i = 0; i < servs.length; i++){//gen site stored serveys
+                    		rowCol = i%2;//row color if even grey if odd blue
+                    		genServCellToR(servs[i], rowCol, 0);
+                    	}
+                    </script>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

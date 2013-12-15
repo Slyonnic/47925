@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link type="text/css" rel="stylesheet" href="mainStylesheet.css"/>
+		<script src="recources/js/libary.js"></script>
+		<title>Isshinryu Karate</title>
+		<!-- HTML Home Page for Isshinryu Karate site redesign -->
+		<!-- Author: Jonathan Tarris -->
+		<script type="text/javascript">
+			
+		</script>
+	</head>
+	
+	<body>
+		<div id="mainWrapper" class="wrapper">
+			<div id="banner">
+				<img src="recources/imgs/isshinryuLogoBlackBack.jpg" />
+			</div>
+			<div id="navBar">
+				<ul>
+					<li><a href="main.html">Home</a>
+						<ul>
+							<!--Insert Dropdown list items here for home btn-->
+						</ul>	
+					</li>
+					<li><a href="announcements.html">News</a>
+						<ul>
+							<!--Insert Dropdown list items here for News btn-->
+							<li><a href="announcements.html">Announcements</a></li>
+							<li><a href="newsBelt.html">Belt Testing</a></li>
+						</ul>	
+					</li>
+					<li><a href="events.html">Events</a>
+						<ul>
+							<!--Insert Dropdown list items here for Events btn-->
+						</ul>	
+					</li>
+					<li><a href="signUp.html">Sign Up</a>
+						<ul>
+							<!--Insert Dropdown list items here for About btn-->
+						</ul>	
+					</li>
+					<li><a href="about.html">About</a>
+						<ul>
+							<!--Insert Dropdown list items here for About btn-->
+							<li><a href="location.html">Location and Schedule</a></li>
+							<li><a href="belts.html">Active Black Belts</a></li>
+							<li><a href="history.html">History</a></li>
+						</ul>	
+					</li>
+					<li><a href="terminology.html">Terminology</a>
+						<ul>
+							<!--Insert Dropdown list items here for Terminology btn-->
+							<li><a href="terminology.html">General</a></li>
+							<li><a href="termStances.html">Stances</a></li>
+							<li><a href="termBlocks.html">Blocks</a></li>
+							<li><a href="termPunches.html">Punches</a></li>
+							<li><a href="termKicks.html">Kicks</a></li>
+							<li><a href="termWeapons.html">Weapons</a></li>
+							<li><a href="termTournament.html">Tournament</a></li>
+						</ul>	
+					</li>
+				</ul>
+				<br class="clearFloat" />
+			</div>
+			<div id="contactContent" class="wrapper">
+				<div id="contactForm">
+					<form name="contactForm" onsubmit="return valForm('contactForm')" action="contactSubmit.html">
+						<p>
+							Name:<br />
+							<input name="fName" id="fName" type="text" placeholder="First" regExp="^[A-Z]{1}[a-z]*$|^[A-Z]{1}[a-z]{1}[A-Z][a-z]*|^[A-Z]{1}[a-z]{1}\s{1}[A-Z][a-z]*" errorMsg="Invalid First Name"/>
+							<input name="lName" id="lName" type="text" placeholder="Last" regExp="^[A-Z]{1}[a-z]*$|^[A-Z]{1}[a-z]{1}[A-Z][a-z]*|^[A-Z]{1}[a-z]{1}\s{1}[A-Z][a-z]*" errorMsg="Invalid Last Name"/><br />
+							Email:<br /><input name="email" type="text" placeholder="Email" style="width: 345px;" regExp="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" errorMsg="Invalid Email Address"/><br />
+						</p>
+						<p>
+							Message:<br />
+							<textarea name="content" style="height: 150px; width: 345px; margin-top: 5px; resize: none;" regExp="^(?!\s*$).+" errorMsg="Please Enter a Message"></textarea>
+						</p>
+						<p>
+							<input type="submit" />
+						</p>
+					</form>
+				</div>
+			</div>
+		</div><!--End of mainWrapper-->
+		<div id="footer" class="wrapper">
+			<p>
+				(760) 568-0961 • Isshinryu Karate Dojo • 68225 Ramon Rd. • Cathedral City, CA 92234<br />
+				<a href="contact.html">Contact Us</a>
+			</p>
+		</div>
+	</body>
+</html>

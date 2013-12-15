@@ -1,0 +1,56 @@
+body{
+	
+}
+
+/****Classes****/
+div.col{
+	margin: 0;
+	padding: 0;
+	width:100px;
+	height:600px;	
+}
+
+.empty{
+	background: url(imgs/conEmpty.png);
+}
+
+.red{
+	background: url(imgs/conRed.png);	
+}
+
+.black{
+	background: url(imgs/conBlack.png);	
+}
+/****END Classes****/
+
+#turn{
+	text-align: center;
+	height:100px;
+}
+
+#turn #playerTurn{
+	margin-top: 50px;	
+}
+
+#board{
+	margin: 0 auto;
+	padding: 0;
+	width: 700px;
+	height: 600px;
+	overflow: hidden;
+}
+
+#board div{
+	float: left;
+}
+
+#board div div{
+	padding:0;
+	margin:0;
+	width: 100px;
+	height: 100px;
+}
+
+#buttons{
+	text-align: center;	
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Survey</title>
+        <link type="text/css" rel="stylesheet" href="mainStylesheet.css" />
+        <script src="js/libary.js"></script>
+        <script src="js/serveys.js"></script>
+        <script type="text/javascript">
+        	
+        </script>
+    </head>
+
+    <body>
+    	<div id="mainWrapper" class="wrapper">
+    		<div id="header">
+    			<h1>Results for "
+	    			<script type="text/javascript">
+	    				var servObj = getFormInfo(location.href);//strip survey tag off of url
+						var curServey = window[servObj["servey"]];
+	    				document.write(curServey.name);
+	    			</script>
+	    			" Survey
+    			</h1>
+    			<p>
+    				<a href="serveyMain.html">Home</a><br />
+    				<a href="resultMain.html">Results</a>
+    			</p>
+    		</div>
+    		<div id="resultsContent">
+				<script type="text/javascript">
+					var servObj = getFormInfo(location.href);//strip survey tag off of url
+					var curServey = window[servObj["servey"]];
+					if(curServey != null){//if servey is found in site storage then display it
+						//insert code here to pull up results to disired servey curServey						
+	
+					}else{//else search for it in local storage
+						//insert local storage code search here
+					}
+					var allCook = getCookies(); //gets all cookies
+					for(var name in allCook){ //loops though all cookies
+						var cName = name.split("-"); //seperates servey id and username
+						if(cName[0] == servObj["servey"]){ //if servey id matches pages servey id							
+							var cValue = allCook[name];//parses cookie value back in to object and displays it
+							var obj = JSON.parse(cValue);
+							document.write("<p>");
+							document.write("<span class='bold'>User: " + cName[1] + "</span><br/>");
+							for(var objName in obj){
+								if(curServey.ques[objName] != null)
+									document.write(curServey.ques[objName].quesText+"="+obj[objName]+"<br/>");
+							}
+							document.write("</p>");
+						}
+					}
+	            </script>
+	    	</div>
+		</div>
+    </body>
+</html>

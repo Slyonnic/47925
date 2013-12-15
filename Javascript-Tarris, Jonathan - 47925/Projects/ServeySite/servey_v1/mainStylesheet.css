@@ -1,0 +1,80 @@
+/* Main Stylesheet for Servey Site
+ * Author: Jonathan Tarris*/
+
+body{
+	
+}
+
+/****Classes****/
+.wrapper{
+	overflow: hidden;	
+}
+
+.lblue{
+	background-color: #E4EFF5;	
+}
+
+.grey{
+	background-color: #F5F5F5;
+}
+
+.bold{
+	font-weight:bold;
+}
+/****END Classes****/
+
+/****Main Page****/
+#mainWrapper{
+	width: 1000px;
+	margin: 0 auto;
+	padding: 0;
+	border:2px solid black;
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+#header{
+	width: inherit;
+	height: 150px;
+}
+
+#header a{
+	float: right;
+}
+
+#serveyList{
+	width: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+#serveyList table{
+	border-spacing: 0;
+	width:inherit;
+}
+
+#serveyList table td{
+	height: 35px;
+	border-right: 1px solid black;
+	text-align:center;	
+}
+
+#serveyList #serveyListHeader td{
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	font-weight: bold;
+}
+
+#serveyList table td:first-child{
+	
+}
+
+#serveyList table td:nth-child(2){
+	width: 300px;
+}
+
+#serveyList table td:nth-child(3){
+	width: 150px;
+	border-right: 0;	
+}
+/****END Main Page****/
+

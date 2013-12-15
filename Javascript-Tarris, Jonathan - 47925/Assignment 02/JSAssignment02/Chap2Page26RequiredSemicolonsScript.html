@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Required Semicolons Script Chap 2 Page 26</title>
+</head>
+
+<body>
+<h1>Chap 2 Page 26 Snippet</h1>
+<script type="text/javascript">
+	var x = 1;
+	var f = 2;
+	var y;
+	//With semicolons code is interpreted as y = x+f; (x+f).toString(); and runs properly
+	y = x + f;
+	(x+f).toString();
+	document.write("<p>y = "+y+"</p>");
+	
+	//Without semicolons code is interpreted as y = x+f(x+f).toString(); and does not run as intended
+	y = x + f
+	(x+f).toString();
+	document.write("<p>y = "+y+"</p>");
+</script>
+</table>
+</body>
+</html>

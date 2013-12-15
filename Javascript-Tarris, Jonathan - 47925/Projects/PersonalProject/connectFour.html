@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Connect 4</title>
+        <link type="text/css" rel="stylesheet" href="mainStylesheet.css" />
+        <script type="text/javascript">
+			var EMPTY = 0; //empty constant
+			var RED = 1; // red constant
+			var BLACK = 2; // black constant
+			var turn = 1; //turn 1 = red 2 = black
+			var board = new Array(7); //main array holing all collums
+			for(var i = 0;i < board.length; i++){
+				board[i] = new Array(6);	//inner array holding all rows
+			}
+			
+			function init(){//initilizeing function
+				for(var i = 0; i < board.length; i++){
+					for(var j = 0; j < board[i].length; j++){
+						board[i][j] = 0;	
+					}
+				}
+				drawBoard();
+				setTurn(1);
+			}
+			
+			function drawBoard(){//redraws the board from the board array
+				var col;
+				var row;
+				var divId;
+				for(var i = 0; i < board.length; i++){
+					col = "col";
+					col += i+1;
+					for(var j = 0; j < board[i].length; j++){
+						row = "row";
+						row += j+1;
+						divId = col + row;
+						if(board[i][j] == EMPTY){//if 0 empty
+							document.getElementById(divId).className = "empty";
+						}else if(board[i][j] == RED){//if 1 red
+							document.getElementById(divId).className = "red";
+						}else if(board[i][j] == BLACK){//if 3 black
+							document.getElementById(divId).className = "black";
+						}
+					}
+				}
+			}
+			
+			function colClick(col){//acts when a collum is clickd
+				col -= 1;
+				var i = 5;
+				while(i >= 0){//runs as many times as there are rows
+					//console.log(i);
+					//console.log(board[col][i]);
+					if(board[col][i] == 0 || board[col][i] == null){//checks if there is a peice in the desired spot
+						board[col][i] = turn; //sets the array to teh new peice
+						altTurn(); //changes the turn
+						break;
+					}
+					i--;
+				}
+				drawBoard();//redraws the board with the new peice data
+			}
+			
+			
+			
+			function altTurn(){//will alternate the turn
+				if(turn == 1){
+					setTurn(2);
+				}else{
+					setTurn(1);	
+				}
+			}
+			
+			function setTurn(newTurn){
+				turn = newTurn
+				if(turn == 1){
+					document.getElementById("playerTurn").innerHTML = "Red Player's Turn";
+				}else{
+					document.getElementById("playerTurn").innerHTML = "Black Player's Turn";
+				}
+			}
+			
+			function resetBoard(){
+				for(var i = 0; i < board.length; i++){
+					for(var j = 0; j < board[i].length; j++){
+						board[i][j] = 0;	
+					}
+				}
+				drawBoard();
+				setTurn(1);
+			}
+			function test(){
+				board[0][5] = 1;
+				drawBoard();
+			}
+			
+		</script>
+    </head>
+
+    <body onload="init">
+    	<div id="turn">
+        	<h1 id="playerTurn">Red Player's Turn</h1>
+        </div>
+    	<div id="board">
+        	<div id="col1" class="col" onclick="colClick(1)">
+            	<div id="col1row1" class="empty"></div>
+                <div id="col1row2" class="empty"></div>
+                <div id="col1row3" class="empty"></div>
+                <div id="col1row4" class="empty"></div>
+                <div id="col1row5" class="empty"></div>
+                <div id="col1row6" class="empty"></div>
+            </div>
+            <div id="col2" class="col" onclick="colClick(2)">
+            	<div id="col2row1" class="empty"></div>
+                <div id="col2row2" class="empty"></div>
+                <div id="col2row3" class="empty"></div>
+                <div id="col2row4" class="empty"></div>
+                <div id="col2row5" class="empty"></div>
+                <div id="col2row6" class="empty"></div>
+            </div>
+            <div id="col3" class="col" onclick="colClick(3)">
+            	<div id="col3row1" class="empty"></div>
+                <div id="col3row2" class="empty"></div>
+                <div id="col3row3" class="empty"></div>
+                <div id="col3row4" class="empty"></div>
+                <div id="col3row5" class="empty"></div>
+                <div id="col3row6" class="empty"></div>
+            </div>
+            <div id="col4" class="col" onclick="colClick(4)">
+            	<div id="col4row1" class="empty"></div>
+                <div id="col4row2" class="empty"></div>
+                <div id="col4row3" class="empty"></div>
+                <div id="col4row4" class="empty"></div>
+                <div id="col4row5" class="empty"></div>
+                <div id="col4row6" class="empty"></div>
+            </div>
+            <div id="col5" class="col" onclick="colClick(5)">
+            	<div id="col5row1" class="empty"></div>
+                <div id="col5row2" class="empty"></div>
+                <div id="col5row3" class="empty"></div>
+                <div id="col5row4" class="empty"></div>
+                <div id="col5row5" class="empty"></div>
+                <div id="col5row6" class="empty"></div>
+            </div>
+            <div id="col6" class="col" onclick="colClick(6)">
+            	<div id="col6row1" class="empty"></div>
+                <div id="col6row2" class="empty"></div>
+                <div id="col6row3" class="empty"></div>
+                <div id="col6row4" class="empty"></div>
+                <div id="col6row5" class="empty"></div>
+                <div id="col6row6" class="empty"></div>
+            </div>
+            <div id="col7" class="col" onclick="colClick(7)">
+            	<div id="col7row1" class="empty"></div>
+                <div id="col7row2" class="empty"></div>
+                <div id="col7row3" class="empty"></div>
+                <div id="col7row4" class="empty"></div>
+                <div id="col7row5" class="empty"></div>
+                <div id="col7row6" class="empty"></div>
+            </div>
+        </div>
+        <div id="buttons">
+        	<button type="button" onclick="resetBoard()">Reset</button>
+        </div>
+    </body>
+</html>

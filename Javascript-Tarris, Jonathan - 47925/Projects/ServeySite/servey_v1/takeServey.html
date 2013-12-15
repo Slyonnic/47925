@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Servey</title>
+        <link type="text/css" rel="stylesheet" href="mainStylesheet.css" />
+        <script src="js/libary.js"></script>
+        <script src="js/serveys.js"></script>
+    </head>
+
+    <body>
+    	<div id="mainWrapper" class="wrapper">
+    		<h1>
+    			<script type="text/javascript">
+    				var servObj = getFormInfo(location.href);//strip survey tag off of url
+					var curServey = window[servObj["servey"]];
+    				document.write(curServey.name);
+    			</script>
+    		</h1>
+	     	<form action="serveySubmit.html">
+	     		<input id="serveyInsName" name="servey" type="hidden" value="" />
+	     		<p>
+	     			Name: <input type="text" name="userName" />
+	     		</p>
+	     		<hr/>
+				<script type="text/javascript">
+					var servObj = getFormInfo(location.href);//strip survey tag off of url
+					var curServey = window[servObj["servey"]];
+					if(curServey != null){//if servey is found in site storage then display it
+						curServey.genServey();
+					}else{//else search for it in local storage
+						//insert local storage code search here
+					}
+					document.getElementById("serveyInsName").value = servObj["servey"];
+	            </script>
+	            <p>
+	            	<input type="submit"/>
+	            </p>	            
+			</form>
+		</div>
+    </body>
+</html>
